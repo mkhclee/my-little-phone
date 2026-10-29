@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#111018" />
+  <title>My Little Phone</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="phone-shell">
+    <div class="dynamic-island"><span class="island-dot"></span><span class="island-wave">▮ ▮ ▮</span></div>
+    <div class="statusbar">
+      <span id="statusTime">9:41</span>
+      <div class="status-right"><span>●</span><span>⌁</span><span>▰</span><span class="battery">86</span></div>
+    </div>
+
+    <section id="lockScreen" class="screen lock-screen">
+      <div class="lock-photo photo-bg"></div>
+      <div class="lock-top"><span id="lockDate">Selasa, 11 November</span><strong id="lockClock">9:41</strong></div>
+      <div class="lock-bottom">
+        <div class="lock-message">Ketuk untuk membuka</div>
+        <div class="lock-actions"><button class="round-action" id="flashlightBtn" aria-label="Senter">▯</button><button class="round-action" id="cameraBtn" aria-label="Kamera">▣</button></div>
+      </div>
+      <button class="unlock-hotspot" id="openPasscode" aria-label="Buka kunci"></button>
+    </section>
+
+    <section id="passcodeScreen" class="screen passcode-screen hidden">
+      <div class="blur-wallpaper"></div>
+      <div class="passcode-content">
+        <p>Masukkan Kode Sandi</p>
+        <div class="dots" id="passcodeDots"><i></i><i></i><i></i><i></i></div>
+        <div class="keypad" id="keypad">
+          <button data-digit="1">1</button><button data-digit="2">2<small>ABC</small></button><button data-digit="3">3<small>DEF</small></button>
+          <button data-digit="4">4<small>GHI</small></button><button data-digit="5">5<small>JKL</small></button><button data-digit="6">6<small>MNO</small></button>
+          <button data-digit="7">7<small>PQRS</small></button><button data-digit="8">8<small>TUV</small></button><button data-digit="9">9<small>WXYZ</small></button>
+          <span></span><button data-digit="0">0</button><button class="delete-key" id="deleteDigit">⌫</button>
+        </div>
+        <div class="passcode-footer"><button id="emergencyBtn">Darurat</button><button id="cancelPasscode">Batalkan</button></div>
+        <p class="hint">Kode contoh: <b>1108</b></p>
+      </div>
+    </section>
+
+    <section id="homeScreen" class="screen home-screen hidden">
+      <div class="home-wallpaper"></div>
+      <header class="home-status"><span id="homeTime">9:41</span><span>●  ▰  <b>86</b></span></header>
+      <div class="widget-grid">
+        <button class="weather-widget app-open" data-app="weather"><span>Neo City ↗</span><strong>24°</strong><small>☁ Berawan<br/>T:29° R:21°</small></button>
+        <button class="photo-widget app-open" data-app="photos"><span class="mini-photo"></span><small>Foto</small></button>
+      </div>
+      <div class="app-grid">
+        <button class="app-icon app-open" data-app="calendar"><span class="icon-tile calendar-icon"><small>SEL</small><b>11</b></span><label>Kalender</label></button>
+        <button class="app-icon app-open" data-app="photos"><span class="icon-tile photos-icon">◉</span><label>Foto</label></button>
+        <button class="app-icon app-open" data-app="notes"><span class="icon-tile notes-icon"><i></i><i></i><i></i></span><label>Catatan</label><em class="notification-dot">1</em></button>
+        <button class="app-icon app-open" data-app="messages"><span class="icon-tile messages-icon">●</span><label>Pesan</label><em class="notification-dot">2</em></button>
+        <button class="app-icon app-open" data-app="x"><span class="icon-tile x-icon">𝕏</span><label>X</label></button>
+        <button class="app-icon app-open" data-app="instagram"><span class="icon-tile insta-icon">◎</span><label>Instagram</label></button>
+        <button class="app-icon app-open" data-app="settings"><span class="icon-tile settings-icon">☼</span><label>Pengaturan</label></button>
+        <button class="app-icon app-open" data-app="phone"><span class="icon-tile phone-icon">☎</span><label>Telepon</label></button>
+        <button class="app-icon app-open" data-app="safari"><span class="icon-tile safari-icon">◉</span><label>Safari</label></button>
+      </div>
+      <div class="search-pill">⌕ Cari</div>
+      <div class="dock">
+        <button class="app-open" data-app="phone"><span class="icon-tile phone-icon">☎</span></button>
+        <button class="app-open" data-app="safari"><span class="icon-tile safari-icon">◉</span></button>
+        <button class="app-open" data-app="messages"><span class="icon-tile messages-icon">●</span></button>
+      </div>
+    </section>
+
+    <section id="appScreen" class="screen app-screen hidden">
+      <header class="app-topbar"><button id="backHome" class="back-button">‹</button><strong id="appTitle">Aplikasi</strong><button id="appMore" class="more-button">•••</button></header>
+      <div id="appContent" class="app-content"></div>
+    </section>
+    <div class="home-indicator" id="homeIndicator"></div>
+    <div id="toast" class="toast hidden"></div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
